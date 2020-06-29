@@ -7,19 +7,15 @@
 //
 
 import UIKit
-import MapKit
 import Foundation
 
 class SecondViewController: UIViewController, CLLocationManagerDelegate {
     
-    let locationManager = CLLocationManager()
     var liveCaseData:Int = 0
-    @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        locationManager.delegate = self
         getLiveStatus()
     }
     func getLiveStatus() {
@@ -47,7 +43,11 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
             let liveData = String(data: data, encoding: .utf8)!
             print("this is live data")
             print(liveData)
+            //let strArr = liveData.split{ $0 == "," }
+            //print(strArr)
             
+            //self.liveCaseData = self.findCases(liveData)
+            //print("total case: \(self.liveCaseData)")
         
           semaphore.signal()
         }
@@ -55,15 +55,5 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         task.resume()
         semaphore.wait()
     }
-    
-    func seperateData(data:String) {
-        
-        
-        
-        
-        
-    }
-    
-    
-}
 
+}
