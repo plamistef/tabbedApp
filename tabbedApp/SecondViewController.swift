@@ -47,11 +47,7 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
             let liveData = String(data: data, encoding: .utf8)!
             print("this is live data")
             print(liveData)
-            //let strArr = liveData.split{ $0 == "," }
-            //print(strArr)
             
-            //self.liveCaseData = self.findCases(liveData)
-            //print("total case: \(self.liveCaseData)")
         
           semaphore.signal()
         }
@@ -68,28 +64,6 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    /*
-    func findCases(_ content:String) -> Int {
-       
-        //let strArr = content.split{ $0 == "," }
-        
-        //let casesInMainland = strArr[7]
-        let casesInGreenland = strArr[17]
-        let casesInFaroeIsland = strArr[27]
-        
-        //let mainlandIndex = casesInMainland.index(casesInMainland.startIndex, offsetBy: 14)
-        let greenlandIndex = casesInGreenland.index(casesInGreenland.startIndex, offsetBy: 14)
-        let faroeIndex = casesInFaroeIsland.index(casesInFaroeIsland.startIndex, offsetBy: 14)
-        
-        //let mainlandCase = Int(casesInMainland[mainlandIndex...])!
-        let greeenlandCase = Int(casesInGreenland[greenlandIndex...])!
-        let faroeCase = Int(casesInFaroeIsland[faroeIndex...])!
     
-        let totalCases =  greeenlandCase + faroeCase
-        
-        return totalCases
-    }
- 
-    */
 }
 
